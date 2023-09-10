@@ -11,93 +11,156 @@ class Dashboard extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("LATEST",
-              style: TextStyle(
-                fontWeight: FontWeight.bold
-              ),),
-              SizedBox(height: 5,),
-              Container(
-                height: 150,
-                width: MediaQuery.of(context).size.width,
-                padding: EdgeInsets.all(8.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  gradient: LinearGradient(
-                    colors: [
-                      Colors.pink,
-                      Colors.purple,
-                      Colors.blue
-                    ],
-                    stops: [
-                      0.1,
-                      0.6,
-                      0.9
-                    ],
-                    begin: Alignment.topLeft,
-                    end:Alignment.bottomRight
-                  )
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    "LATEST",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('ASIM AZHAR',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        letterSpacing: 3.0
+                SizedBox(
+                  height: 5,
+                ),
+                Container(
+                  height: 150,
+                  width: MediaQuery.of(context).size.width,
+                  padding: EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      gradient: LinearGradient(
+                          colors: [Colors.pink, Colors.purple, Colors.blue],
+                          stops: [0.1, 0.6, 0.9],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight)),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'ASIM AZHAR',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                            letterSpacing: 3.0),
                       ),
-                    ),
-                    Text('MEHERMAAN',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 30,
-                        fontWeight: FontWeight.bold
-                      )
-                    ),Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Opacity(
-                          opacity: 0.7,
-                          child: TextButton(
-                              onPressed: (){}, child: Text('LISTEN NOW'),
-                            style:  ButtonStyle(
-                              foregroundColor: MaterialStateProperty.all(Colors.black),
-                              backgroundColor: MaterialStateProperty.all(Colors.grey),
-
+                      Text('MEHERMAAN',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Opacity(
+                            opacity: 0.7,
+                            child: TextButton(
+                              onPressed: () {},
+                              child: Text('LISTEN NOW'),
+                              style: ButtonStyle(
+                                foregroundColor:
+                                    MaterialStateProperty.all(Colors.black),
+                                backgroundColor:
+                                    MaterialStateProperty.all(Colors.grey),
+                              ),
                             ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              Text("MOST PLAYED",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold
-                ),),
-              CarouselSlider(
-                  items: [
-                    DashboardWidget(imageSinger: 'assets/images/dard.jfif'),
-                  ],
-                  options: CarouselOptions(
-                    height: 200,
-                    viewportFraction: 0.4,
-                    initialPage: 0,
-                    reverse: false,
-                    // autoPlay: true,
-                    // autoPlayInterval: Duration(seconds: 3),
-                    // autoPlayAnimationDuration: Duration(milliseconds: 800),
-                    // autoPlayCurve: Curves.fastOutSlowIn,
-                    // enlargeCenterPage: true,
-                    // enlargeFactor: 0.3,
-                    scrollDirection: Axis.horizontal,
-              ))
-            ],
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    "MOST PLAYED",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+                CarouselSlider(
+                    items: [
+                      DashboardWidget(
+                        imageSinger: 'assets/images/dard.jfif',
+                        singer: 'ASIM AZHAR',
+                        songname: 'DARD',
+                      ),
+                      DashboardWidget(
+                        imageSinger: 'assets/images/jhoom.jfif',
+                        singer: 'ALI ZAFAR',
+                        songname: 'JHOOM',
+                      ),
+                      DashboardWidget(
+                        imageSinger: 'assets/images/kesebatain.jfif',
+                        singer: 'ATIF ASLAM',
+                        songname: 'KESE BATAIN',
+                      ),
+                      DashboardWidget(
+                        imageSinger: 'assets/images/terawohpyar.jpg',
+                        singer: 'MOMINAH MUSTEHSAN',
+                        songname: 'TERA WOH PYAR',
+                      ),
+                    ],
+                    options: CarouselOptions(
+                      height: 200,
+                      viewportFraction: 0.4,
+                      initialPage: 0,
+                      reverse: false,
+                      // autoPlay: true,
+                      // autoPlayInterval: Duration(seconds: 3),
+                      // autoPlayAnimationDuration: Duration(milliseconds: 800),
+                      // autoPlayCurve: Curves.fastOutSlowIn,
+                      // enlargeCenterPage: true,
+                      // enlargeFactor: 0.3,
+                      scrollDirection: Axis.horizontal,
+                    )),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    "PLAYLISTS",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+                CarouselSlider(
+                    items: [
+                      DashboardWidget(
+                        imageSinger: 'assets/images/dard.jfif',
+                        singer: 'ASIM AZHAR',
+                        songname: 'DARD',
+                      ),
+                      DashboardWidget(
+                        imageSinger: 'assets/images/jhoom.jfif',
+                        singer: 'ALI ZAFAR',
+                        songname: 'JHOOM',
+                      ),
+                      DashboardWidget(
+                        imageSinger: 'assets/images/kesebatain.jfif',
+                        singer: 'ATIF ASLAM',
+                        songname: 'KESE BATAIN',
+                      ),
+                      DashboardWidget(
+                        imageSinger: 'assets/images/terawohpyar.jpg',
+                        singer: 'MOMINAH MUSTEHSAN',
+                        songname: 'TERA WOH PYAR',
+                      ),
+                    ],
+                    options: CarouselOptions(
+                      height: 200,
+                      viewportFraction: 0.4,
+                      initialPage: 0,
+                      reverse: false,
+                      // autoPlay: true,
+                      // autoPlayInterval: Duration(seconds: 3),
+                      // autoPlayAnimationDuration: Duration(milliseconds: 800),
+                      // autoPlayCurve: Curves.fastOutSlowIn,
+                      // enlargeCenterPage: true,
+                      // enlargeFactor: 0.3,
+                      scrollDirection: Axis.horizontal,
+                    ))
+              ],
+            ),
           ),
         ),
       ),
