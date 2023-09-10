@@ -19,23 +19,26 @@ class MainScreen extends StatelessWidget {
           ),
           Positioned(
               // left: MediaQuery.of(context).size.width * 0.22,
-              top: 20,
+              top: 40,
               child: Column(
                 children: [
                   Text(
                     'SOUND PLAY',
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 35,
+                        fontSize: 50,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 3.0),
                   ),
                   Text(
                     "PLAY YOUR FAVOURITE MUSIC",
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 17
+                    ),
                   ),
                   SizedBox(
-                    height: 100,
+                    height: MediaQuery.of(context).size.height*0.2,
                   ),
                   Image.asset(
                     'assets/images/sound.webp',
@@ -49,7 +52,8 @@ class MainScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
             Navigator.of(context).push(MaterialPageRoute(builder: (context) => Dashboard(),));
-          }, label: Row(children: [Text('PLAY ME'),Icon(Icons.play_arrow)],)
+          },
+          label: Row(children: [Text('PLAY ME'),Icon(Icons.play_arrow)],),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
