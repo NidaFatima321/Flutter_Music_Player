@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:musicplayerapp/playlist_screen.dart';
 import 'package:musicplayerapp/widgets/dashboard_widget.dart';
+import 'package:musicplayerapp/song_screen.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -85,22 +87,25 @@ class Dashboard extends StatelessWidget {
                       DashboardWidget(
                         imageSinger: 'assets/images/dard.jfif',
                         singer: 'ASIM AZHAR',
-                        songname: 'DARD',
+                        songname: 'DARD', link: SongScreen(song: 'dard', imageSong: 'dard.jfif', signer: 'asim azhar',),
                       ),
                       DashboardWidget(
                         imageSinger: 'assets/images/jhoom.jfif',
                         singer: 'ALI ZAFAR',
                         songname: 'JHOOM',
+                          link: SongScreen(song: 'jhoom', imageSong: 'jhoom.jfif', signer: 'ali zafar',)
                       ),
                       DashboardWidget(
                         imageSinger: 'assets/images/kesebatain.jfif',
                         singer: 'ATIF ASLAM',
                         songname: 'KESE BATAIN',
+                          link: SongScreen(song: 'dard', imageSong: 'dard.jfif', signer: 'asim azhar',)
                       ),
                       DashboardWidget(
                         imageSinger: 'assets/images/terawohpyar.jpg',
                         singer: 'MOMINAH MUSTEHSAN',
                         songname: 'TERA WOH PYAR',
+                          link: SongScreen(song: 'dard', imageSong: 'dard.jfif', signer: 'asim azhar',)
                       ),
                     ],
                     options: CarouselOptions(
@@ -126,24 +131,22 @@ class Dashboard extends StatelessWidget {
                 CarouselSlider(
                     items: [
                       DashboardWidget(
-                        imageSinger: 'assets/images/dard.jfif',
-                        singer: 'ASIM AZHAR',
-                        songname: 'DARD',
+                        imageSinger: '',
+                        singer: 'DAILY DOSE',
+                        songname: '28 Songs',
+                          link: PlaylistScreen()
                       ),
                       DashboardWidget(
-                        imageSinger: 'assets/images/jhoom.jfif',
-                        singer: 'ALI ZAFAR',
-                        songname: 'JHOOM',
+                        imageSinger: '',
+                        singer: 'OGs',
+                        songname: '100 Songs',
+                          link: PlaylistScreen()
                       ),
                       DashboardWidget(
-                        imageSinger: 'assets/images/kesebatain.jfif',
-                        singer: 'ATIF ASLAM',
-                        songname: 'KESE BATAIN',
-                      ),
-                      DashboardWidget(
-                        imageSinger: 'assets/images/terawohpyar.jpg',
-                        singer: 'MOMINAH MUSTEHSAN',
-                        songname: 'TERA WOH PYAR',
+                        imageSinger: '',
+                        singer: 'GYM SONGS',
+                        songname: '15 Songs',
+                          link: PlaylistScreen()
                       ),
                     ],
                     options: CarouselOptions(
