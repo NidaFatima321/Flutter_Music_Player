@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:musicplayerapp/main.dart';
 import 'package:musicplayerapp/playlist_screen.dart';
 import 'package:musicplayerapp/widgets/dashboard_widget.dart';
 import 'package:musicplayerapp/song_screen.dart';
@@ -49,7 +50,7 @@ class Dashboard extends StatelessWidget {
                             fontSize: 15,
                             letterSpacing: 3.0),
                       ),
-                      Text('MEHERMAAN',
+                      Text('GHALAT FEHMI',
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 30,
@@ -60,7 +61,9 @@ class Dashboard extends StatelessWidget {
                           Opacity(
                             opacity: 0.7,
                             child: TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => SongScreen(song: 'ghalatfehmi', imageSong: 'dard.jfif', signer:'asim azhar'),));
+                              },
                               child: Text('LISTEN NOW'),
                               style: ButtonStyle(
                                 foregroundColor:
@@ -99,13 +102,13 @@ class Dashboard extends StatelessWidget {
                         imageSinger: 'assets/images/kesebatain.jfif',
                         singer: 'ATIF ASLAM',
                         songname: 'KESE BATAIN',
-                          link: SongScreen(song: 'dard', imageSong: 'dard.jfif', signer: 'asim azhar',)
+                          link: SongScreen(song: 'kesebatain', imageSong: 'kesebatain.jfif', signer: 'Atif Aslam',)
                       ),
                       DashboardWidget(
                         imageSinger: 'assets/images/terawohpyar.jpg',
                         singer: 'MOMINAH MUSTEHSAN',
                         songname: 'TERA WOH PYAR',
-                          link: SongScreen(song: 'dard', imageSong: 'dard.jfif', signer: 'asim azhar',)
+                          link: SongScreen(song: 'terawohpyar', imageSong: 'terawohpyar.jpg', signer: 'Momina Mustehsan',)
                       ),
                     ],
                     options: CarouselOptions(
@@ -133,20 +136,20 @@ class Dashboard extends StatelessWidget {
                       DashboardWidget(
                         imageSinger: '',
                         singer: 'DAILY DOSE',
-                        songname: '28 Songs',
-                          link: PlaylistScreen()
+                        songname: '${daily.length}',
+                          link: PlaylistScreen(type: 'daily',)
                       ),
                       DashboardWidget(
                         imageSinger: '',
                         singer: 'OGs',
-                        songname: '100 Songs',
-                          link: PlaylistScreen()
+                        songname: '${og.length}',
+                          link: PlaylistScreen(type: 'og',)
                       ),
                       DashboardWidget(
                         imageSinger: '',
                         singer: 'GYM SONGS',
-                        songname: '15 Songs',
-                          link: PlaylistScreen()
+                        songname: '${gym.length}',
+                          link: PlaylistScreen(type: 'gym',)
                       ),
                     ],
                     options: CarouselOptions(
