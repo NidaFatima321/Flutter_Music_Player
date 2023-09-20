@@ -22,7 +22,7 @@ class DashboardWidget extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Colors.blueGrey,
+                  Colors.deepPurple,
                   Colors.purple
                 ],
                 stops: [

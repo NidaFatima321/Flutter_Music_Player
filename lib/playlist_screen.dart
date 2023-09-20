@@ -13,9 +13,11 @@ class PlaylistScreen extends StatelessWidget {
       songs = daily;
     } else if (type == 'og') {
       songs = og;
-    } else {
+    } else if(type=='gym'){
       songs = gym;
-    }
+    }else if(type=='arijit'){songs=arijit;}
+    else if(type=='asim'){songs=asim;}
+    else{songs=atif;}
     ;
     return Scaffold(
       backgroundColor: Colors.black,

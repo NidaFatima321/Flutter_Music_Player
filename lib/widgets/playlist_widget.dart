@@ -30,7 +30,7 @@ class PlaylistWidget extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 18
+                fontSize: 15
               ),),
               Text(singerName)],
           ),
@@ -49,7 +49,6 @@ class PlaylistWidget extends StatelessWidget {
                   Image.asset('assets/images/splash.png',width: 60,),
                   Positioned(
                       left: 15,
-
                       child: Icon(Icons.play_arrow,size: 30,color: Colors.white,))
                 ],
               )

@@ -94,8 +94,7 @@ class _SongScreenState extends State<SongScreen> {
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
-                              fontSize: 28,
-                              letterSpacing: 2),
+                              fontSize: 20,),
                         ),
                         Text(
                           widget.signer.toUpperCase(),
@@ -201,15 +200,18 @@ class _SongScreenState extends State<SongScreen> {
             StreamBuilder(
                 stream: _audioAsset.currentPosition,
                 builder: (context, snapshot) {
-                  return ProgressBar(
-                      onSeek: (duration) {
-                        _audioAsset.seek(duration);
-                      },
-                      baseBarColor: Colors.deepPurple,
-                      progressBarColor: Colors.grey,
-                      progress: _audioAsset.currentPosition.value,
-                      total: _audioAsset.current.valueOrNull?.audio.duration ??
-                          Duration(seconds: 4));
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ProgressBar(
+                        onSeek: (duration) {
+                          _audioAsset.seek(duration);
+                        },
+                        baseBarColor: Colors.deepPurple,
+                        progressBarColor: Colors.grey,
+                        progress: _audioAsset.currentPosition.value,
+                        total: _audioAsset.current.valueOrNull?.audio.duration ??
+                            Duration(seconds: 4)),
+                  );
                 })
           ],
         ),

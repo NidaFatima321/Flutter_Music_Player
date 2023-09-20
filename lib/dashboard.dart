@@ -157,12 +157,41 @@ class Dashboard extends StatelessWidget {
                       viewportFraction: 0.4,
                       initialPage: 0,
                       reverse: false,
-                      // autoPlay: true,
-                      // autoPlayInterval: Duration(seconds: 3),
-                      // autoPlayAnimationDuration: Duration(milliseconds: 800),
-                      // autoPlayCurve: Curves.fastOutSlowIn,
-                      // enlargeCenterPage: true,
-                      // enlargeFactor: 0.3,
+                      scrollDirection: Axis.horizontal,
+                    )),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    "ARTISTS",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+                CarouselSlider(
+                    items: [
+                      DashboardWidget(
+                        imageSinger: 'assets/images/arijit.jfif',
+                        singer: 'ARIJIT SINGH',
+                        songname: '${arijit.length}',
+                          link: PlaylistScreen(type: 'arijit',)
+                      ),
+                      DashboardWidget(
+                        imageSinger: 'assets/images/kesebatain.jfif',
+                        singer: 'ATIF ASLAM',
+                        songname: '${atif.length}',
+                          link: PlaylistScreen(type: 'atif',)
+                      ),
+                      DashboardWidget(
+                        imageSinger: 'assets/images/asim.jfif',
+                        singer: 'ASIM AZHAR',
+                        songname: '${asim.length}',
+                          link: PlaylistScreen(type: 'asim',)
+                      ),
+                    ],
+                    options: CarouselOptions(
+                      height: 200,
+                      viewportFraction: 0.4,
+                      initialPage: 0,
+                      reverse: false,
                       scrollDirection: Axis.horizontal,
                     ))
               ],
